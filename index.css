@@ -1,0 +1,25 @@
+.checkList {
+  border: 1px solid black;
+  width: 1200px;
+  height: 700px;
+  margin: 100px auto 0;
+  padding: 30px;
+  text-align: center;
+}
+
+.checkList__heading {
+  font-size: 40px;
+}
+
+.checkList__question {
+  font-size: 24px;
+}
+.checkList__input {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.checkList__tasks {
+  border: 1px solid blue;
+}
