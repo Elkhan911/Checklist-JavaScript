@@ -1,7 +1,7 @@
 const input = document.querySelector("#_input");
 const checkList = document.querySelector("#_checkList");
-const deleteAll = document.querySelectorAll(".delete");
-const checkAll = document.querySelectorAll(".check");
+let deleteAll = document.querySelectorAll(".delete");
+let checkAll = document.querySelectorAll(".check");
 
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -17,6 +17,7 @@ input.addEventListener("keydown", function (event) {
     let span1 = document.createElement("span");
     span1.textContent = "удалить";
     span1.classList.add("checkList__option");
+    span1.classList.add("delete");
 
     let span2 = document.createElement("span");
     span2.textContent = "выполнено";
@@ -27,11 +28,15 @@ input.addEventListener("keydown", function (event) {
   }
 });
 
-for (let deleteTask of deleteAll) {
-  deleteTask.addEventListener("click", function () {
-    this.closest("li").remove();
-  });
+function deleteTask() {
+  for (let deleteTask of deleteAll) {
+    deleteTask.addEventListener("click", function () {
+      deleteTask.closest("li").remove();
+    });
+  }
 }
+
+deleteTask();
 
 for (let checkTask of checkAll) {
   checkTask.addEventListener("click", function () {
