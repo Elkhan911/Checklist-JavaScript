@@ -29,6 +29,12 @@ input.addEventListener("keydown", function (event) {
 
 for (let deleteTask of deleteAll) {
   deleteTask.addEventListener("click", function () {
-    deleteTask.closest("li").remove();
+    this.closest("li").remove();
+  });
+}
+
+for (let checkTask of checkAll) {
+  checkTask.addEventListener("click", function () {
+    checkTask.closest("li").classList.add("checked");
   });
 }

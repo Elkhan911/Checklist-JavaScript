@@ -33,6 +33,7 @@
   display: block;
   padding: 10px;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .checkList__options {
@@ -44,4 +45,8 @@
   color: rgb(107, 99, 99);
   padding: 30px 0 0 0;
   cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
 }
