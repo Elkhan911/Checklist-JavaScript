@@ -11,8 +11,17 @@
     <section class="checkList">
       <h1 class="checkList__heading">Чеклист на JavaScript</h1>
       <p class="checkList__question">Что вы должны сделать сегодня?</p>
-      <input class="checkList__input" type="text" />
-      <div class="checkList__tasks" id="_tasksZone"></div>
+      <input class="checkList__input" type="text" id="_input" />
+      <ul class="checkList__tasks" id="_tasksZone">
+        Список ваших дел:
+        <li class="checkList__item">
+          Проснуться в хорошем настроении
+          <span class="checkList__option">выполнено</span>
+          <span class="checkList__option">удалить</span>
+        </li>
+        <li class="checkList__item">Выбрать подарок маме</li>
+        <li class="checkList__item">Забронировать стол в ресторане</li>
+      </ul>
     </section>
     <script src="script.js"></script>
   </body>

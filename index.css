@@ -15,11 +15,21 @@
   font-size: 24px;
 }
 .checkList__input {
-  width: 200px;
+  width: 400px;
   height: 40px;
   font-size: 20px;
 }
 
 .checkList__tasks {
+  list-style: none;
+  margin: 20px;
   border: 1px solid blue;
+  font-size: 20px;
+}
+
+.checkList__item {
+  border: 1px solid black;
+  margin: 10px auto;
+  width: 400px;
+  display: block;
 }
