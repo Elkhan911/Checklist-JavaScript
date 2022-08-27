@@ -4,7 +4,6 @@ const checkList = document.querySelector("#_checkList");
 // функция для удаления задачи
 function deleteTask() {
   let deleteAll = document.querySelectorAll(".delete");
-  console.log(deleteAll);
   for (let deleteTask of deleteAll) {
     deleteTask.addEventListener("click", function () {
       deleteTask.closest("li").remove();
@@ -17,10 +16,12 @@ deleteTask();
 // функция для зачеркивания задачи
 function checkTask() {
   let checkAll = document.querySelectorAll(".check");
-  console.log(checkAll);
   for (let checkTask of checkAll) {
     checkTask.addEventListener("click", function () {
-      checkTask.closest("li").classList.add("checked");
+      checkTask
+        .closest("li")
+        .querySelector(".checkList__item-text")
+        .classList.toggle("checked");
     });
   }
 }
@@ -28,7 +29,21 @@ function checkTask() {
 checkTask();
 
 // функция для редактирования задачи
-function editTask() {}
+function editTask() {
+  let editBtns = document.querySelectorAll(".checkList__image");
+  console.log(editBtns);
+
+  let checkListTexts = document.querySelectorAll(".checkList_item-text");
+
+  for (let editBtn of editBtns) {
+    editBtn.addEventListener("click", function () {
+      let input = document.createElement("input");
+      editBtn.closest("li").prepend(input);
+    });
+  }
+}
+
+editTask();
 
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
