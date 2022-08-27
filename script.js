@@ -60,9 +60,19 @@ editTask();
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     let li = document.createElement("li");
-    li.textContent = input.value;
     li.classList.add("checkList__item");
     checkList.append(li);
+
+    let span = document.createElement("span");
+    span.textContent = input.value;
+    span.classList.add("checkList__text");
+    li.append(span);
+
+    let img = document.createElement("img");
+    img.classList.add("checkList__image");
+    img.src = "images/editBtn.png";
+    img.alt = "эмблема редактирования";
+    li.append(img);
 
     let div = document.createElement("div");
     div.classList.add("checkList__options");
