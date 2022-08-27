@@ -33,18 +33,25 @@ function editTask() {
   let editBtns = document.querySelectorAll(".checkList__image");
 
   for (let editBtn of editBtns) {
-    editBtn.addEventListener("click", function () {
+    editBtn.addEventListener("click", func);
+
+    function func() {
       let input = document.createElement("input");
       input.classList.add("input__edition");
       editBtn.closest("li").prepend(input);
 
-      input.addEventListener("keydown", function (event) {
-        input.nextElementSibling.textContent = input.value;
-        if (event.key == "Enter") {
-          input.remove();
-        }
-      });
-    });
+      input.addEventListener(
+        "keydown",
+        function (event) {
+          input.nextElementSibling.textContent = input.value;
+          if (event.key == "Enter") {
+            input.remove();
+            editBtn.addEventListener("click", func);
+          }
+        },
+        editBtn.removeEventListener("click", func)
+      );
+    }
   }
 }
 

@@ -52,9 +52,9 @@
 }
 
 .checkList__image {
-  display: inline-block;
   width: 8%;
   margin: 0 0 0 0;
+  float: right;
 }
 
 .input__edition {
