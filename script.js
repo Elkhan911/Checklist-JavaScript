@@ -93,5 +93,6 @@ input.addEventListener("keydown", function (event) {
 
     deleteTask();
     checkTask();
+    editTask();
   }
 });
