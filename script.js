@@ -20,7 +20,7 @@ function checkTask() {
     checkTask.addEventListener("click", function () {
       checkTask
         .closest("li")
-        .querySelector(".checkList__item-text")
+        .querySelector(".checkList__text")
         .classList.toggle("checked");
     });
   }
@@ -31,14 +31,19 @@ checkTask();
 // функция для редактирования задачи
 function editTask() {
   let editBtns = document.querySelectorAll(".checkList__image");
-  console.log(editBtns);
-
-  let checkListTexts = document.querySelectorAll(".checkList_item-text");
 
   for (let editBtn of editBtns) {
     editBtn.addEventListener("click", function () {
       let input = document.createElement("input");
+      input.classList.add("input__edition");
       editBtn.closest("li").prepend(input);
+
+      input.addEventListener("keydown", function (event) {
+        input.nextElementSibling.textContent = input.value;
+        if (event.key == "Enter") {
+          input.remove();
+        }
+      });
     });
   }
 }

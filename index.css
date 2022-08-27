@@ -56,3 +56,10 @@
   width: 8%;
   margin: 0 0 0 0;
 }
+
+.input__edition {
+  display: block;
+  height: 20px;
+  width: 250px;
+  margin: 15px auto;
+}
