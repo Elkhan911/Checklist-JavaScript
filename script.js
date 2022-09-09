@@ -33,9 +33,9 @@ function editTask() {
   let editBtns = document.querySelectorAll(".checkList__image");
 
   for (let editBtn of editBtns) {
-    editBtn.addEventListener("click", func);
+    editBtn.addEventListener("click", editionTask);
 
-    function func() {
+    function editionTask() {
       let input = document.createElement("input");
       input.classList.add("input__edition");
       editBtn.closest("li").prepend(input);
@@ -46,10 +46,10 @@ function editTask() {
           input.nextElementSibling.textContent = input.value;
           if (event.key == "Enter") {
             input.remove();
-            editBtn.addEventListener("click", func);
+            editBtn.addEventListener("click", editionTask);
           }
         },
-        editBtn.removeEventListener("click", func)
+        editBtn.removeEventListener("click", editionTask)
       );
     }
   }
